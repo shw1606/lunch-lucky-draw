@@ -1,11 +1,8 @@
 import { RiArrowLeftSFill, RiArrowRightSFill } from '@remixicon/react';
-import { auth } from '@/auth';
 import DrawButton from '@/components/atoms/DrawButton';
 import MobileOnlyTemplate from '@/components/templates/MobileOnlyTemplate';
 
 const Home = async () => {
-  const session = await auth();
-
   const onDraw = async () => {
     'use server';
     console.log('Draw!');
