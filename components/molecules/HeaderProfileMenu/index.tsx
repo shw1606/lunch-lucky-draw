@@ -26,10 +26,7 @@ const HeaderProfileMenu = ({
           <span className="sr-only">Open user menu</span>
           <Image
             className="h-8 w-8 rounded-full"
-            src={
-              session?.user?.profileImageUrl ||
-              'https://avatar.vercel.sh/leerob'
-            }
+            src={'https://avatar.vercel.sh/leerob'}
             height={32}
             width={32}
             alt={`${session?.user?.name || 'placeholder'} avatar`}
