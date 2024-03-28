@@ -1,11 +1,13 @@
 import Link from 'next/link';
 import HeaderProfileMenu from '@/components/molecules/HeaderProfileMenu';
+import TopWIPBanner from '@/components/organisms/TopWIPBanner';
 
 const navigation = [{ name: '내 쿠폰함', href: '/my-coupons' }];
 
 const Header = async () => {
   return (
     <header className="w-full bg-white shadow-sm sticky -top-12 z-10 sm:-top-14">
+      <TopWIPBanner />
       <div className="relative mx-auto max-w-[640px] px-4 h-[64px] flex justify-between items-center sm:max-w-7xl sm:px-10">
         <Link href="/">오늘의 점메추</Link>
         <div className="flex items-center">
