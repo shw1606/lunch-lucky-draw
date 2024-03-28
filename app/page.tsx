@@ -1,11 +1,33 @@
-import { RiArrowLeftSFill, RiArrowRightSFill } from '@remixicon/react';
-import DrawButton from '@/components/atoms/DrawButton';
+import LuckyDrawer from '@/components/organisms/LuckyDrawer';
 import MobileOnlyTemplate from '@/components/templates/MobileOnlyTemplate';
+import { Coupon } from '@/lib/definitions';
 
 const Home = async () => {
   const onDraw = async () => {
     'use server';
-    console.log('Draw!');
+    const couponExample: Coupon = {
+      restaurantName: '타코로코',
+      promotionContent: '3000원 할인',
+    };
+
+    return {
+      coupon: couponExample,
+      otherRestaurants: [
+        '한술식당',
+        '타코로코',
+        '올모스트 다이',
+        '두마리 찜닭',
+        '포케 올데이',
+        '청년 샐러드',
+        '텐동미세기',
+        '부엉이 돈가스',
+        '평안도 식당',
+        '김판석 초밥',
+        '신촌 포가레',
+        '친친 칼국수',
+        couponExample.restaurantName,
+      ],
+    };
   };
 
   return (
@@ -16,16 +38,7 @@ const Home = async () => {
           오늘 뭐 먹을지 고민이라면,
           <br /> 점심메뉴 추천과 함께 쿠폰을 받아보세요!
         </p>
-        <div className="flex items-center mt-10">
-          <RiArrowRightSFill className="w-12 h-12 inline-block" />
-          <div className="min-w-52 text-2xl border-2 border-red-500 py-2 inline-block overflow-hidden">
-            오늘의 식당은?!
-          </div>
-          <RiArrowLeftSFill className="w-12 h-12 inline-block" />
-        </div>
-        <div className="mt-8">
-          <DrawButton onDraw={onDraw} />
-        </div>
+        <LuckyDrawer onDraw={onDraw} />
       </div>
     </MobileOnlyTemplate>
   );

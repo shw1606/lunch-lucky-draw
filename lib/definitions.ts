@@ -7,3 +7,15 @@ export interface User {
 export interface ArrayItemQueryRows {
   name: string;
 }
+
+export interface Menu {
+  name: string;
+  price: number;
+  discountedPrice: number;
+}
+
+export interface Coupon {
+  restaurantName: string;
+  menus?: Menu[];
+  promotionContent: string;
+}
