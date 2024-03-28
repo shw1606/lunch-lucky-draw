@@ -6,7 +6,7 @@ const Home = async () => {
   const onDraw = async () => {
     'use server';
     const couponExample: Coupon = {
-      restaurantName: '타코로코',
+      restaurantName: '연세 식당',
       promotionContent: '3000원 할인',
     };
 
@@ -31,8 +31,8 @@ const Home = async () => {
   };
 
   return (
-    <MobileOnlyTemplate className="h-screen">
-      <div className="flex flex-col items-center justify-center h-full text-center">
+    <MobileOnlyTemplate className="">
+      <div className="flex flex-col items-center justify-center min-h-[calc(100vh-200px)] text-center">
         <h1 className="text-4xl font-bold">신촌 점메추</h1>
         <p className="text-lg mt-4">
           오늘 뭐 먹을지 고민이라면,
