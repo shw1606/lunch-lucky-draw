@@ -7,6 +7,15 @@ export const authConfig = {
   },
   callbacks: {
     authorized({ auth, request: { nextUrl } }) {
+      if (nextUrl.pathname === '/my-coupons') {
+        if (!!auth?.user) {
+          return true;
+        } else {
+          return Response.redirect(
+            new URL(`/login?callbackUrl=${nextUrl.toString()}`, nextUrl.origin)
+          );
+        }
+      }
       return true;
     },
     async jwt({ token, user, trigger, session, account }) {
